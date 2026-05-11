@@ -1,4 +1,4 @@
-import { Card, Imagem, Descricao, Nota, Titulo, Infoss, TagContainer2 } from './styles';
+import { Card, Imagem, Descricao, Nota, Titulo, Infoss, Divisao, Titulo2, Divisao2} from './styles';
 import Tag from '../Tag';
 import { ButtonLink } from '../Button/styles';
 
@@ -22,11 +22,13 @@ const Restaurante = ({  description, image, image2, nota, infos, title }: Props)
                 <Tag key={info}>{info}</Tag>
             ))}
         </Infoss>
-        <TagContainer2>
+        <Divisao>
         <Titulo>{title}</Titulo>
-        <h3>{nota}</h3>
-        <Nota src={image2}  />
-        </TagContainer2>
+        <Divisao2>
+        <Titulo2>{nota}</Titulo2>
+        <Nota src={image2} />
+        </Divisao2>
+        </Divisao>
         <Descricao>{description}</Descricao>
         <ButtonLink to="/perfil">Saiba mais</ButtonLink>
     </Card>

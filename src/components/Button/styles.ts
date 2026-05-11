@@ -15,4 +15,6 @@ export const ButtonLink = styled(Link)`
     background-color: ${cores.laranja};
     color: ${cores.rosa2};
     text-decoration: none;
+    
 `
+
