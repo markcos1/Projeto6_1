@@ -1,4 +1,4 @@
-import Product from '../../models/Product'
+
 import { ItemMenu, BotaoProduto } from './styles'
 
 type Props = {
