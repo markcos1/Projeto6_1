@@ -1,60 +1,51 @@
+import { useParams } from "react-router-dom";
 
 import Listagem2 from "../../components/Listagem2";
-
 import Footer from "../../components/Rodape";
 import Header from "../../components/Header";
 import Apresentacao from "../../components/Apresentacao";
+
+
 import Product from '../../models/Product';
 
-import pizza from "../../assets/images/marguerita.png"
+import Margueritta from "../../assets/images/marguerita.png";
+import PerfilModal from "../../components/PerfilModal";
 
 
-const propriedades: Product[] = [
-    {
-        id: 1,
-        image: pizza,
-        title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-    },
+const products: Product[] = [
     {
         id: 2,
-        image: pizza,
+        image: Margueritta,
         title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
+        description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
     },
     {
         id: 3,
-        image: pizza,
+        image: Margueritta,
         title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
+        description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
     },
     {
         id: 4,
-        image: pizza,
+        image: Margueritta,
         title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-    },
-    {
-        id: 5,
-        image: pizza,
-        title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-    },
-    {
-        id: 6,
-        image: pizza,
-        title: "Pizza Marguerita",
-        description: "A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!",
-    },
-]
+        description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
+    }
+];
 
-const Perfil = () => (
+
+const Perfil = () => {
+    const { id } = useParams();
+
+    return (
     <>
-    <Header />
-    <Apresentacao />
-    <Listagem2 Pratos={propriedades} />
-    <Footer />
+        <Header />
+        <Apresentacao />
+        <PerfilModal url={`/produto/${id}`} />
+        <Listagem2 Pratos={products} />
+        <Footer />
     </>
 )
+}
 
 export default Perfil;

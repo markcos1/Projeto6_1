@@ -19,8 +19,15 @@ export const Cabeca = styled.header`
 
 
         h1 {
-            margin-top: 190px;
+            width: 539px;
+            height: 84px;
+            font-family: Roboto;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 100%;
+            text-align: center;
             margin-bottom: 40px;
+            margin-top: 200px;
 
         }
     }

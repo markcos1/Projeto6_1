@@ -6,12 +6,14 @@ import Rotas from './routes';
 
 function App() {
   return(
+
     <BrowserRouter>
     <GlobalCss />
     <div className="container">
         <Rotas />
     </div>
     </BrowserRouter>
+
   )
 }
 

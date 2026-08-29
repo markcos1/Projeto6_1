@@ -13,6 +13,8 @@ export const Feet = styled.footer`
         font-size:10px;
         font-weight: 400;
         line-height: 100%;
+        align-items: center;
+        font-family: Roboto, sans-serif;
     }
 
 `

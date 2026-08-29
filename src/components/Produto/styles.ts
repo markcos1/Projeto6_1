@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 
 export const ItemMenu = styled.section`
     display: block;
-    width: 320px;
-    height: 320px;
+    width: 472px;
+    height: 398px;
     background-color: ${cores.laranja};
     padding: 8px;
+    border: 1px solid ${cores.laranja};
+
     
 
 

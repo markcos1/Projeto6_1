@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import { createGlobalStyle } from "styled-components"; 
 
 export const cores = {
@@ -8,6 +9,8 @@ export const cores = {
     dourado: '#FFB930',
     cordefundo: 'border: Mixed solid #E66767'
 }
+
+
 
 export const GlobalCss = createGlobalStyle `
     * {
@@ -24,9 +27,10 @@ export const GlobalCss = createGlobalStyle `
     }
 
     .container {
-    max-width: 1366px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
+
     }
 }
 `
