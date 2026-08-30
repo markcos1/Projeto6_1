@@ -14,7 +14,7 @@ export const Cabeca2 = styled.header`
         font-style: black;
         font-size: 18px;
         line-height: 100%;
-        horizontal-align: center;
+        vertical-align: center;
         margin: 83px 171px 83px 171px;
     }
 `
