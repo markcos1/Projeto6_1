@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+
 import { createGlobalStyle } from "styled-components"; 
 
 export const cores = {
@@ -7,7 +7,7 @@ export const cores = {
     rosa2: '#FFEBD9',
     branco: '#fff',
     dourado: '#FFB930',
-    cordefundo: 'border: Mixed solid #E66767'
+    cordefundo: '#FFF8F2'
 }
 
 

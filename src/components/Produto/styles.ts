@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 export const ItemMenu = styled.section`
     display: block;
-    width: 472px;
-    height: 398px;
+    width: 320px;
+    height: 338px;
     background-color: ${cores.laranja};
     padding: 8px;
     border: 1px solid ${cores.laranja};
@@ -20,13 +20,13 @@ export const ItemMenu = styled.section`
         font-weight: 900;
         color: ${cores.rosa2};
         margin-top: 8px;
-        margin-bottom: 8px;
     }
 
     p {
         font-weight: 400;
         font-size: 14px;
         color: ${cores.rosa2};
+        margin-top: 8px;
         margin-bottom: 8px;
     }
 `

@@ -10,7 +10,11 @@ export const Cabeca2 = styled.header`
 
 
     h4, p {
-    
-        margin: 82px 171px;
+        font-weight: 900;
+        font-style: black;
+        font-size: 18px;
+        line-height: 100%;
+        horizontal-align: center;
+        margin: 83px 171px 83px 171px;
     }
 `

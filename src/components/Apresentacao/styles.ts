@@ -2,33 +2,26 @@ import styled from "styled-components"
 
 
 export const Apresenta = styled.div`
-    display: block;
+    display: flex;
     width: 100%;
     height:280px;
     background-repeat: no-repeat;
     background-size: cover;
-
-    div {
-        display: block;
-        margin-left: 170px;
-        padding-top: 24px;
-        padding-bottom: 32px;
-
-        
-
-        p {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 170px;
+    box-sizing: border-box;
     
-            font-weight: 100;
-            font-style: thin;
-            line-height: 100%;
-            font-size: 20px;
-            color: rgba(245, 245, 245, 0.5);;
 
-        }
+    img {
+        max-width: 100%;
+        height: auto;
 
-        h2 {
-        margin-top: 190px;
-        }
+        &:not(:last-child) {
+            margin-bottom: 190px;
     }
+}
+
 
 `

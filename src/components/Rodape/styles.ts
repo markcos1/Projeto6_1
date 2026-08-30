@@ -11,7 +11,8 @@ export const Feet = styled.footer`
 
     p {
         font-size:10px;
-        font-weight: 400;
+        font-weight: 480px;
+        height: 24px;
         line-height: 100%;
         align-items: center;
         font-family: Roboto, sans-serif;

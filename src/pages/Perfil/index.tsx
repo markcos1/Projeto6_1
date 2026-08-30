@@ -9,10 +9,15 @@ import Apresentacao from "../../components/Apresentacao";
 import Product from '../../models/Product';
 
 import Margueritta from "../../assets/images/marguerita.png";
-import PerfilModal from "../../components/PerfilModal";
 
 
 const products: Product[] = [
+    {
+        id: 1,
+        image: Margueritta,
+        title: "Pizza Marguerita",
+        description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
+    },
     {
         id: 2,
         image: Margueritta,
@@ -30,6 +35,18 @@ const products: Product[] = [
         image: Margueritta,
         title: "Pizza Marguerita",
         description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
+    },
+    {
+        id: 5,
+        image: Margueritta,
+        title: "Pizza Marguerita",
+        description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
+    },
+    {
+        id: 6,
+        image: Margueritta,
+        title: "Pizza Marguerita",
+        description: "Deliciosa pizza com molho de tomate, queijo mozzarella e manjericão fresco. Perfeita para os amantes de sabores clássicos e autênticos da culinária italiana."
     }
 ];
 
@@ -41,7 +58,6 @@ const Perfil = () => {
     <>
         <Header />
         <Apresentacao />
-        <PerfilModal url={`/produto/${id}`} />
         <Listagem2 Pratos={products} />
         <Footer />
     </>
