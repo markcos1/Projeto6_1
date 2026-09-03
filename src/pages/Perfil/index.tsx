@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+
 
 import Listagem2 from "../../components/Listagem2";
 import Footer from "../../components/Rodape";
@@ -52,7 +52,7 @@ const products: Product[] = [
 
 
 const Perfil = () => {
-    const { id } = useParams();
+
 
     return (
     <>
