@@ -19,6 +19,7 @@ export const GlobalCss = createGlobalStyle `
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
 
+}
 
     body {
         background-color: ${cores.cordefundo};
@@ -27,10 +28,14 @@ export const GlobalCss = createGlobalStyle `
     }
 
     .container {
-    max-width: 100%;
+    max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 
+    @media screen {
+        padding: 0 20px;
     }
-}
+
+    }
+
 `

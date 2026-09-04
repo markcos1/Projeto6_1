@@ -5,6 +5,7 @@ export const Cabeca = styled.header`
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 40px 0;
     
     
 
@@ -20,14 +21,15 @@ export const Cabeca = styled.header`
 
         h1 {
             width: 539px;
-            height: 84px;
+            height: auto;
             font-family: Roboto;
             font-weight: bold;
             font-size: 36px;
             line-height: 100%;
             text-align: center;
-            margin-bottom: 40px;
-            margin-top: 200px;
+            margin-bottom: 0;
+            margin-top: 138px;
+
 
         }
     }

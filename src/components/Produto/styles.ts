@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const ItemMenu = styled.section`
     display: block;
-    width: 320px;
+    width: 100%;
     height: 338px;
     background-color: ${cores.laranja};
     padding: 8px;
@@ -36,7 +36,6 @@ export const BotaoProduto = styled(Link)`
     height: 24px;
     display: flex;
     justify-content: center;
-    margin-right: 30px;;
     font-size: 14px;
     font-weight: 700;
     color: ${cores.laranja};
