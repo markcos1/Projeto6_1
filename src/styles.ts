@@ -7,7 +7,8 @@ export const cores = {
     rosa2: '#FFEBD9',
     branco: '#fff',
     dourado: '#FFB930',
-    cordefundo: '#FFF8F2'
+    cordefundo: '#FFF8F2',
+    corbotaooverlay: '#FFEBD9'
 }
 
 

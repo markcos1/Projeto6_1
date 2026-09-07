@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { cores } from "../../styles";
 
 export const Container = styled.section`
-    background-color: ${cores.rosa1};
-    margin: 56px 171px 120px 171px;
+    max-width: 1024px;
+    width: 100%;
+    margin: 56px auto 120px auto;
+    box-sizing: border-box;
 
 `;
 
@@ -13,9 +15,11 @@ export const List = styled.ul`
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
     width: 100%;
-    
+    padding: 0;
+    margin: 0;
+    list-style: none;
     
     @media (max-width: 768px) {
-        
+        grid-template-columns: 1fr;
     }
 `

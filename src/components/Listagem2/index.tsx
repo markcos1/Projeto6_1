@@ -4,9 +4,10 @@ import Produto from "../Produto";
 
 export type Props = {
     Pratos?: Product[]
+    onCardClick?: () => void
 }
 
-const Pratos = ({ Pratos}: Props) => (
+const Pratos = ({ Pratos, onCardClick }: Props) => (
     <Container>
         <List>
             {Pratos?.map((prato) => (
@@ -16,7 +17,8 @@ const Pratos = ({ Pratos}: Props) => (
                     description={prato.description}
                     image={prato.image}
                     title={prato.title}
-                
+                    onOpenModal={onCardClick}
+
                 />
             ))}
         </List>

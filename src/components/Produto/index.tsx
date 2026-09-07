@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import { ItemMenu, BotaoProduto } from './styles'
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
     title: string
     description: string
     id: number
+    onOpenModal?: () => void
 
 }
 
@@ -20,7 +22,9 @@ const Produto = (props: Props) => {
         <h2>{props.title}</h2>
         <p>{props.description}</p>
         <div>
-        <BotaoProduto to={`/PerfilModal`}>Adicionar ao carrinho</BotaoProduto>
+        <BotaoProduto as={Link} to="/PerfilModal">
+            Adicionar ao carrinho
+        </BotaoProduto>
         </div>
     </ItemMenu>
 )
