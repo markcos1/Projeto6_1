@@ -1,4 +1,4 @@
-import { useState }  from "react"
+
 
 import Listagem2 from "../../components/Listagem2";
 import Footer from "../../components/Rodape";
@@ -53,13 +53,12 @@ const products: Product[] = [
 
 const Perfil = () => {
 
-    const [modalAberto, setModalAberto] = useState(false);
 
     return (
     <>
         <Header />
         <Apresentacao />
-        <Listagem2 Pratos={products} onCardClick={() => setModalAberto(true)} />
+        <Listagem2 Pratos={products} onCardClick={() => (true)} />
         <Footer />
         
     </>
