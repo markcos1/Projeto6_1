@@ -3,8 +3,8 @@ import { Container, List } from './styles';
 import Produto from "../Produto";
 
 export type Props = {
-    Pratos?: Product[]
-    onCardClick?: () => void
+    Pratos: Product[]
+    onCardClick: () => void
 }
 
 const Pratos = ({ Pratos, onCardClick }: Props) => (

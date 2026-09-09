@@ -8,7 +8,7 @@ export const cores = {
     branco: '#fff',
     dourado: '#FFB930',
     cordefundo: '#FFF8F2',
-    corbotaooverlay: '#FFEBD9'
+    backbotao: '#FFEBD9'
 }
 
 

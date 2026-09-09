@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import { cores } from "../../styles"
-import { Link } from "react-router-dom";
 
 export const ItemMenu = styled.section`
     display: block;
@@ -30,7 +29,7 @@ export const ItemMenu = styled.section`
         margin-bottom: 8px;
     }
 `
-export const BotaoProduto = styled(Link)`
+export const BotaoProduto = styled.button`
     padding: 4px 6px;
     width: 304px;
     height: 24px;
@@ -39,7 +38,7 @@ export const BotaoProduto = styled(Link)`
     font-size: 14px;
     font-weight: 700;
     color: ${cores.laranja};
-    background-color: ${cores.rosa2};
+    background-color: ${cores.backbotao};
     text-align: center;
     text-decoration: none;
 

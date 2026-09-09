@@ -1,26 +1,26 @@
 import styled from "styled-components";
 import { cores } from "../../styles";
 
-// O Overlay ocupa a tela inteira com os 80% de opacidade pretos do Figma
+
 export const Overlay = styled.div`
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Dados do seu print: #000000 80% */
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 `;
 
-// Caixa do Modal com as medidas exatas selecionadas no seu Figma
+
 export const ContainerModal = styled.div`
-    background-color: ${cores.laranja}; /* Cor salmão/rosa */
+    background-color: ${cores.laranja}; 
     width: 100%;
-    max-width: 1024px; /* Largura exata do print */
-    height: 344px;    /* Altura exata do print */
+    max-width: 1024px;
+    height: 344px;  
     padding: 32px;
     position: relative;
     box-sizing: border-box;
@@ -34,10 +34,7 @@ export const BotaoFechar = styled.button`
     border: none;
     cursor: pointer;
 
-    img {
-    width: 16px;
-    height: 16px;
-    }
+    
 `;
 
 export const ConteudoModal = styled.div`
@@ -55,7 +52,7 @@ export const ImagemProduto = styled.img`
 export const DetalhesProduto = styled.div`
     display: flex;
     flex-direction: column;
-    color: ${cores.branco}; /* Substitua pela sua variável de cor clara */
+    color: ${cores.branco}; 
 
     h2 {
     font-size: 18px;
@@ -72,14 +69,14 @@ export const DetalhesProduto = styled.div`
 `;
 
 export const BotaoAdicionar = styled.button`
-    background-color: ${cores.cordefundo};
-    color: ${cores.corbotaooverlay};
+    background-color: ${cores.backbotao};
+    color: ${cores.laranja};
     border: none;
     padding: 8px 16px;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-  align-self: flex-start; /* Impede o botão de esticar até o final */
+    align-self: flex-start; 
 `;
 
 

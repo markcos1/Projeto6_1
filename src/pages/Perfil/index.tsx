@@ -4,7 +4,7 @@ import Listagem2 from "../../components/Listagem2";
 import Footer from "../../components/Rodape";
 import Header from "../../components/Header";
 import Apresentacao from "../../components/Apresentacao";
-import PerfilModal from "../../components/PerfilModal";
+
 
 
 import Product from '../../models/Product';
@@ -61,7 +61,7 @@ const Perfil = () => {
         <Apresentacao />
         <Listagem2 Pratos={products} onCardClick={() => setModalAberto(true)} />
         <Footer />
-        <PerfilModal />
+        
     </>
 )
 }
