@@ -5,7 +5,6 @@ import { cores } from "../../styles"
 export const ItemMenu = styled.section`
     display: block;
     width: 100%;
-    height: 338px;
     background-color: ${cores.laranja};
     padding: 8px;
     border: 1px solid ${cores.laranja};

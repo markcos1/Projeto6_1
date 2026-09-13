@@ -1,5 +1,6 @@
 import Product from "../../models/Product";
-import { Container, List } from './styles';
+import * as S from './styles';
+import { Container } from '../../styles';
 import Produto from "../Produto";
 
 export type Props = {
@@ -8,8 +9,10 @@ export type Props = {
 }
 
 const Pratos = ({ Pratos, onCardClick }: Props) => (
+    
+    <S.ListaProdutos>
     <Container>
-        <List>
+        <S.List>
             {Pratos?.map((prato) => (
                 <Produto 
                     key={prato.id}
@@ -21,10 +24,9 @@ const Pratos = ({ Pratos, onCardClick }: Props) => (
 
                 />
             ))}
-        </List>
+        </S.List>
     </Container>
-)
-
-
+    </S.ListaProdutos>
+        )
 
 export default Pratos;

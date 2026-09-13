@@ -21,7 +21,7 @@ const Produto = (props: Props) => {
         <p>{props.description}</p>
         <div>
         <BotaoProduto onClick={props.onOpenModal}>
-            Mais detalhes
+            Adicionar ao carrinho
         </BotaoProduto>
         </div>
     </ItemMenu>

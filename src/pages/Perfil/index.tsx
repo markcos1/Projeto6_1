@@ -55,13 +55,14 @@ const Perfil = () => {
 
 
     return (
-    <>
+        <>
+        
         <Header />
         <Apresentacao />
         <Listagem2 Pratos={products} onCardClick={() => (true)} />
         <Footer />
+        </>
         
-    </>
 )
 }
 

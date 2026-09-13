@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 import { cores } from '../../styles'
 
+import { Container } from '../../styles'
+
 export const Feet = styled.footer`
     background-color: ${cores.rosa2};
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding: 40px 0;
 
     p {
         font-size:10px;
@@ -18,6 +21,14 @@ export const Feet = styled.footer`
         font-family: Roboto, sans-serif;
     }
 
+`
+
+export const Content = styled(Container)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 `
 
 export const Links = styled.div`

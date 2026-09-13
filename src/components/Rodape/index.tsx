@@ -1,5 +1,6 @@
-import { Feet, Links } from "./styles"
 import { Link } from "react-router-dom"
+
+import * as S from './styles'
 
 import logo from '../../assets/images/logo.svg'
 import instagram from '../../assets/images/instagram.png'
@@ -10,9 +11,10 @@ import twitter from '../../assets/images/twitter.png'
 
 const Footer = () => (
 
-    <Feet>
+    <S.Feet>
+        <S.Content>
         <img src={logo} alt="Logo" />
-        <Links>
+        <S.Links>
             <ul>
                 <Link to="https://www.instagram.com/">
                 <img src={instagram} alt="Instagram" />
@@ -24,10 +26,11 @@ const Footer = () => (
                 <img src={twitter} alt="Twitter" />
                 </Link>
             </ul>
-        </Links>
+        </S.Links>
         <p >A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.
         </p>
-    </Feet>
+        </S.Content>
+    </S.Feet>
 )
 
 export default Footer

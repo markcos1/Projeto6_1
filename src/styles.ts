@@ -1,5 +1,6 @@
 
-import { createGlobalStyle } from "styled-components"; 
+import styled, { createGlobalStyle } from "styled-components"; 
+
 
 export const cores = {
     laranja: '#E66767',
@@ -39,4 +40,13 @@ export const GlobalCss = createGlobalStyle `
 
     }
 
+`
+export const Container = styled.div`
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1024px) {
+    padding: 0 20px;
+    }
 `

@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { cores } from '../../styles';
+
+import { Container } from '../../styles';
 
 export const Cabeca2 = styled.header`
     display: flex;
@@ -11,10 +14,18 @@ export const Cabeca2 = styled.header`
 
     h4, p {
         font-weight: 900;
-        font-style: black;
+        font-style: normal;
         font-size: 18px;
         line-height: 100%;
-        vertical-align: center;
-        margin: 83px 171px 83px 171px;
+        text-align: center;
+        color: ${cores.laranja};
+
     }
+
+`
+export const ContainerHeader = styled(Container)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 56px 0;
 `
