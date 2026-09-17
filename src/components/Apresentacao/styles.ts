@@ -15,11 +15,13 @@ export const Apresenta = styled.div`
 
     p {
         font-family: 'Roboto', sans-serif;
-        font-weight: small;
+        font-weight: 100;
         font-style: Thin;
-        font-size: 18px;
+        font-size: 32px;
+        line-height: 100%;
         color: ${cores.branco};
         margin-bottom: 150px;
+        opacity: 0.8;
     }
     h2 {
         font-family: 'Roboto', sans-serif;
@@ -44,7 +46,6 @@ export const Apresenta = styled.div`
 export const ContainerApresentacao = styled(Container)`
     display: flex;
     width: 100%;
-    height:280px;
     background-repeat: no-repeat;
     background-size: cover;
     flex-direction: column;
