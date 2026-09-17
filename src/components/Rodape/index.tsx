@@ -27,7 +27,8 @@ const Footer = () => (
                 </Link>
             </ul>
         </S.Links>
-        <p >A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.
+        <p >A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade <br />
+        dos produtos é toda do estabelecimento contratado.
         </p>
         </S.Content>
     </S.Feet>
