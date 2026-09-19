@@ -15,17 +15,22 @@ const Produto = (props: Props) => {
 
 
     return (
-    <ItemMenu>
-        <img src={props.image} alt={props.title} />
-        <h2>{props.title}</h2>
-        <p>{props.description}</p>
-        <div>
-        <BotaoProduto onClick={props.onOpenModal}>
-            Adicionar ao carrinho
-        </BotaoProduto>
-        </div>
-    </ItemMenu>
-)
+
+        <ItemMenu>
+            <img src={props.image} alt={props.title} />
+            <h2>{props.title}</h2>
+            <p>{props.description}</p>
+            <div>
+                <BotaoProduto onClick={props.onOpenModal}>
+                    Adicionar ao carrinho
+                </BotaoProduto>
+            </div>
+        </ItemMenu>
+
+        
+    )   
+
+
 }
 
 export default Produto;

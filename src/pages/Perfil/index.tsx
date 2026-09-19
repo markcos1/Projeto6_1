@@ -1,15 +1,18 @@
+import { useState } from "react";
+import Product from '../../models/Product';
 
 
 import Listagem2 from "../../components/Listagem2";
 import Footer from "../../components/Rodape";
 import Header from "../../components/Header";
 import Apresentacao from "../../components/Apresentacao";
+import PerfilModal from "../../components/PerfilModal";
 
 
 
-import Product from '../../models/Product';
 
 import Margueritta from "../../assets/images/marguerita.png";
+
 
 
 const products: Product[] = [
@@ -53,13 +56,20 @@ const products: Product[] = [
 
 const Perfil = () => {
 
+    const [selectedProduct, setSelectedProduct ] = useState<Product | null>(null);
 
     return (
         <>
         
         <Header />
         <Apresentacao />
-        <Listagem2 Pratos={products} onCardClick={() => (true)} />
+        <Listagem2 Pratos={products} onCardClick={(prato) => setSelectedProduct(prato) } />
+        {selectedProduct && (
+            <PerfilModal prato={selectedProduct} onClose={() => setSelectedProduct(null)} isOpen={false} />
+        )
+
+        }
+        
         <Footer />
         </>
         

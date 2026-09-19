@@ -1,25 +1,29 @@
+import Product from "../../models/Product";
+
 import Margueritta from "../../assets/images/marguerita.png";
 import Fechar from "../../assets/images/fecharx.png";
 import {Overlay, ContainerModal, BotaoFechar, ConteudoModal, ImagemProduto, DetalhesProduto, BotaoAdicionar} from "./styles";
 
 type Props = {
+    prato: Product;
     isOpen: boolean;
     onClose: () => void;
 }
 
 
-const PerfilModal = (props: Props) => {
+const PerfilModal = ({prato, onClose}: Props) => {
 
 
 
 return (
 
-    <Overlay>
-        <ContainerModal>
-            <BotaoFechar onClick={props.onClose}  >
+    <Overlay onClick={onClose}>
+        <ContainerModal onClick={(e) => e.stopPropagation()}>
+            
+            <BotaoFechar onClick={onClose}  >
                 <img src={Fechar} alt="Fechar" />
             </BotaoFechar>
-            <ConteudoModal>
+            <ConteudoModal >
 
                 <ImagemProduto src={Margueritta} alt="Imagem do Produto"   />
                 <DetalhesProduto>
