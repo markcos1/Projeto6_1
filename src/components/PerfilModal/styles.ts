@@ -33,6 +33,7 @@ export const BotaoFechar = styled.button`
     background: transparent;
     border: none;
     cursor: pointer;
+    width: min-content;
 
     
 `;
@@ -72,6 +73,7 @@ export const BotaoAdicionar = styled.button`
     background-color: ${cores.backbotao};
     color: ${cores.laranja};
     border: none;
+    width: 50%;
     padding: 8px 16px;
     font-weight: bold;
     font-size: 14px;
