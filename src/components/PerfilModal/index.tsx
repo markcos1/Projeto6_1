@@ -1,5 +1,4 @@
-import Product from "../../models/Product";
-
+import { Product } from "../../pages/Perfil"
 import Margueritta from "../../assets/images/marguerita.png";
 import Fechar from "../../assets/images/fecharx.png";
 import {Overlay, ContainerModal, BotaoFechar, ConteudoModal, ImagemProduto, DetalhesProduto, BotaoAdicionar} from "./styles";
@@ -21,7 +20,7 @@ return (
         <ContainerModal onClick={(e) => e.stopPropagation()}>
             
             <BotaoFechar onClick={onClose}  >
-                <img src={Fechar} alt="Fechar" />
+                <img src={Fechar} alt="Fechar modal" />
             </BotaoFechar>
             <ConteudoModal >
 

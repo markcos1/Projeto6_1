@@ -27,6 +27,13 @@ export const ItemMenu = styled.section`
         margin-top: 8px;
         margin-bottom: 8px;
     }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 210px;
+        object-fit: cover ;
+    }
 `
 export const BotaoProduto = styled.button`
     padding: 4px 6px;
