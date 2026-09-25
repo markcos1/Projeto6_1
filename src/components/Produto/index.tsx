@@ -16,12 +16,19 @@ type Props = {
 const Produto = (props: Props) => {
 
 
+    const getDescricao = (descricao: string) => {
+        if (descricao.length > 130 ) {
+            return descricao.slice(0, 120) + '...'
+        }
+        return descricao
+    }
+
     return (
 
         <ItemMenu>
             <img src={props.foto} alt={props.nome} />
             <h2>{props.nome}</h2>
-            <p>{props.descricao}</p>
+            <p>{getDescricao(props.descricao)}</p>
             <div>
                 <BotaoProduto onClick={props.onOpenModal}>
                     Adicionar ao carrinho

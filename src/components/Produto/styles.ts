@@ -31,7 +31,7 @@ export const ItemMenu = styled.section`
     img {
         display: block;
         width: 100%;
-        height: 210px;
+        height: 167px;
         object-fit: cover ;
     }
 `
