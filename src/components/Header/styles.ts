@@ -19,6 +19,7 @@ export const Cabeca2 = styled.header`
         line-height: 100%;
         text-align: center;
         color: ${cores.laranja};
+        cursor: pointer;
 
     }
 

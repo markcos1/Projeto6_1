@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 import Listagem2 from "../../components/Listagem2";
 import Footer from "../../components/Rodape";
 import Header from "../../components/Header";
@@ -15,8 +14,6 @@ export type Product = {
     descricao: string;
     porcao: string;
 }
-
-
 
 export type Restaurantes = {
     id: number,
@@ -64,7 +61,7 @@ const Perfil = () => {
         <Apresentacao />
         <Listagem2 Pratos={products} onCardClick={(prato) => setSelectedProduct(prato) } />
         {selectedProduct && (
-            <PerfilModal prato={selectedProduct} onClose={() => setSelectedProduct(null)} isOpen={false} />
+            <PerfilModal prato={selectedProduct} onClose={() => setSelectedProduct(null)} isOpen={!!selectedProduct} />
         )
 
         }

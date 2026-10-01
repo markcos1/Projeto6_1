@@ -1,4 +1,4 @@
-import { ItemMenu, BotaoProduto } from './styles'
+import { ItemMenu } from './styles'
 
 type Props = {
 
@@ -13,7 +13,7 @@ type Props = {
 }
 
 
-const Produto = (props: Props) => {
+const Produto = ({foto, nome, descricao, preco, porcao, id, onOpenModal}: Props) => {
 
 
     const getDescricao = (descricao: string) => {
@@ -26,13 +26,13 @@ const Produto = (props: Props) => {
     return (
 
         <ItemMenu>
-            <img src={props.foto} alt={props.nome} />
-            <h2>{props.nome}</h2>
-            <p>{getDescricao(props.descricao)}</p>
+            <img src={foto} alt={nome} />
+            <h2>{nome}</h2>
+            <p>{getDescricao(descricao)}</p>
             <div>
-                <BotaoProduto onClick={props.onOpenModal}>
+                <button onClick={onOpenModal} type="button">
                     Adicionar ao carrinho
-                </BotaoProduto>
+                </button>
             </div>
         </ItemMenu>
 

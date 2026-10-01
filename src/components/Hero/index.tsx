@@ -3,7 +3,9 @@ import { Cabeca } from './styles';
 import back from '../../assets/images/fundo.svg';
 import logo from '../../assets/images/logo.svg';
 
-const Hero = () => (
+const Hero = () => {
+
+    return (
     <Cabeca style={{ backgroundImage: `url(${back})` }}>
         <div className="container">
             <img src={logo} alt="Logo do site" />
@@ -12,6 +14,6 @@ const Hero = () => (
         </div>
         
     </Cabeca>
-)
+)}
 
 export default Hero
