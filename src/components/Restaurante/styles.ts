@@ -3,10 +3,11 @@ import { cores } from '../../styles';
 import { TagContainer } from '../Tag/styles';
 import { ButtonLink } from '../Button/styles';
 
+
 export const Card = styled.div`
     background-color: ${cores.branco};
     width: 100%;
-    min-height: 400px;
+    height: 100%;
     border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-color: #E66767;
@@ -23,6 +24,7 @@ export const Card = styled.div`
         margin-bottom: 8px;
         align-self: flex-start;
     }
+
 
 
 `
@@ -48,6 +50,7 @@ export const Nota = styled.img`
     width: 21px;
     height: 21px;
     margin-left: 8px;
+    
 `
 export const Divisao = styled.div`
     display: flex;

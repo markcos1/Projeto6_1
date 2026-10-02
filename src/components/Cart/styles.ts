@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { cores } from "../../styles";
 import { ButtonContainer } from "../Button/styles";
 import lixeira from "../../assets/images/lixeira-de-reciclagem.png"
+import { breakpoints } from "../../styles";
 
 export const Overlay = styled.div`
     position: absolute;
@@ -45,6 +46,11 @@ export const Sidebar = styled.aside`
         font-style: Bold;
         max-width: 100%;
         width: 100%;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        max-width: 100%;
+        width: 260px;
     }
 `
 
@@ -105,5 +111,9 @@ export const ProdutoCard = styled.li`
         right: 0;
         margin: 8px;
     }
-    
+
+    @media (max-width: ${breakpoints.tablet}) {
+        width: 100%;
+        height: auto;
+    }
 `

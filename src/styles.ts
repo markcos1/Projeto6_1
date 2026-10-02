@@ -12,6 +12,10 @@ export const cores = {
     backbotao: '#FFEBD9'
 }
 
+export const breakpoints = {
+    desktop: '1024px',
+    tablet: '768px'
+}
 
 
 export const GlobalCss = createGlobalStyle `
@@ -34,19 +38,18 @@ export const GlobalCss = createGlobalStyle `
     width: 100%;
     margin: 0 auto;
 
-    @media screen {
-        padding: 0 20px;
+    @media (max-width: ${breakpoints.desktop}) {
+        // max-width: 80%;
     }
-
-    }
-
+}
 `
 export const Container = styled.div`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 
-    @media screen and (max-width: 1024px) {
-    padding: 0 20px;
+    @media (max-width: ${breakpoints.desktop}) {
+        padding: 0 20px;
     }
+
 `

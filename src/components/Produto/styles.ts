@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { cores } from "../../styles"
 
+import { breakpoints } from "../../styles"
+
 export const ItemMenu = styled.section`
     display: block;
     width: 100%;
@@ -47,5 +49,11 @@ export const BotaoProduto = styled.button`
     background-color: ${cores.backbotao};
     text-align: center;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: ${breakpoints.desktop}) {
+        width: 100%;
+    }
 
 `

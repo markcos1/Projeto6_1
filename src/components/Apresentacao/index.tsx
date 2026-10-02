@@ -3,21 +3,28 @@ import macarrao2 from '../../assets/images/macarrao2.png';
 import { Apresenta, ContainerApresentacao } from './styles';
 
 
-const Apresentacao = () => (
+type Props = {
+    tipo: string;
+    titulo: string;
+    capa: string;
+}
 
+const Apresentacao = ({ tipo, titulo, capa }: Props) => {
 
+    return (
 
-    <Apresenta style={{backgroundImage: `url(${macarrao2})`}}>
+    <Apresenta style={{backgroundImage: `url(${capa})`}}>
         <ContainerApresentacao>
 
-        <p>Italiana</p>
-        <h2>La Dolce Vita Trattoria</h2>
+        <p>{tipo}</p>
+        <h2>{titulo}</h2>
         </ContainerApresentacao>
 
 
     </Apresenta>
 
+    )
+}
 
-)
 
 export default Apresentacao;

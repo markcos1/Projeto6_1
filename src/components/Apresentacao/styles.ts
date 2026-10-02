@@ -3,6 +3,8 @@ import { cores } from "../../styles"
 
 import { Container } from "../../styles"
 
+import { breakpoints } from "../../styles"
+
 export const Apresenta = styled.div`
     width: 100%;
     height:280px;
@@ -53,4 +55,16 @@ export const ContainerApresentacao = styled(Container)`
     align-items: flex-start;
     padding: 32px 0;
     box-sizing: border-box;
+
+
+    @media (max-width: ${breakpoints.desktop}) {
+        padding-left: 20px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        p, h2 {
+            font-size: 24px;
+            
+        }
+    }
 `

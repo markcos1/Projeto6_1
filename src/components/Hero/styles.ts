@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {breakpoints} from '../../styles'
 
 export const Cabeca = styled.header`
     display: block;
@@ -33,5 +34,24 @@ export const Cabeca = styled.header`
 
         }
     }
+
+
+    @media (max-width: ${breakpoints.tablet}) {
+        &.container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            h1 {
+                max-width: 100%;
+                font-size: 14px;
+        
+                
+            }
+
+
+        } 
+    
 
 `

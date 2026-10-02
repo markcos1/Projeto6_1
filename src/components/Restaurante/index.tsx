@@ -1,36 +1,45 @@
 import { Card, Imagem, Descricao, Nota, Titulo, Infoss, Divisao, Titulo2, Divisao2} from './styles';
 import Tag from '../Tag';
 import { ButtonLink } from '../Button/styles';
+import Restaurant from '../../models/Restaurant';
+import estrela from '../../assets/images/estrela.png';
+
 
 
 type Props ={
-    description: string
-    image: string
-    image2: string
-    nota: number
-    infos: string[]
-    title: string
+    id: number;
+    titulo: string;
+    destacado: boolean;
+    tipo: string;
+    avaliacao: number;
+    descricao: string;
+    capa: string;
+    cardapio: Restaurant[];
 
 }
 
-const Restaurante = ({  description, image, image2, nota, infos, title }: Props) => (
+const Restaurante = ({ id, titulo, destacado, tipo, avaliacao, descricao, capa, cardapio }: Props) => (
 
     <Card>
-        <Imagem src={image}  />
+        <Imagem src={capa} alt={titulo} />
+
         <Infoss>
-            {infos.map((info) => (
-                <Tag key={info}>{info}</Tag>
-            ))}
+            {destacado && <Tag>Destaque da semana</Tag>}
+            <Tag>{tipo}</Tag>
         </Infoss>
+
         <Divisao>
-        <Titulo>{title}</Titulo>
+        <Titulo>{titulo}</Titulo>
+
         <Divisao2>
-        <Titulo2>{nota}</Titulo2>
-        <Nota src={image2} />
+        <Titulo2>{avaliacao}</Titulo2>
+        <Nota src={estrela} alt="Estrela de avaliação" />
         </Divisao2>
+
         </Divisao>
-        <Descricao>{description}</Descricao>
-        <ButtonLink to="/perfil">Saiba mais</ButtonLink>
+
+        <Descricao>{descricao}</Descricao>
+        <ButtonLink to={`/perfil/${id}`}>Saiba mais</ButtonLink>
     </Card>
 )
 

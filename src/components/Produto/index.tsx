@@ -1,11 +1,11 @@
-import { ItemMenu } from './styles'
+import { ItemMenu, BotaoProduto } from './styles'
 
 type Props = {
 
     foto: string
     nome: string
     descricao: string
-    preco: string
+    preco: number
     porcao: string
     id: number
     onOpenModal: () => void
@@ -30,9 +30,9 @@ const Produto = ({foto, nome, descricao, preco, porcao, id, onOpenModal}: Props)
             <h2>{nome}</h2>
             <p>{getDescricao(descricao)}</p>
             <div>
-                <button onClick={onOpenModal} type="button">
+                <BotaoProduto onClick={onOpenModal}>
                     Adicionar ao carrinho
-                </button>
+                </BotaoProduto>
             </div>
         </ItemMenu>
 

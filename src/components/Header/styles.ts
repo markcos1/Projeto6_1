@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { cores } from '../../styles';
+import { breakpoints, cores } from '../../styles';
 
 import { Container } from '../../styles';
 
@@ -29,4 +29,20 @@ export const ContainerHeader = styled(Container)`
     justify-content: space-between;
     align-items: center;
     padding: 56px 0;
+
+    a {
+        text-decoration: none;
+        
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+    }
 `
