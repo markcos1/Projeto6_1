@@ -1,5 +1,3 @@
-import macarrao2 from '../../assets/images/macarrao2.png';
-
 import { Apresenta, ContainerApresentacao } from './styles';
 
 
