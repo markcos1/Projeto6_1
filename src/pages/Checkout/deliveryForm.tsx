@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IMaskInput } from 'react-imask'
 
 import * as S from "../../components/BaseModal/styles"
 
@@ -62,7 +63,13 @@ const DeliveryForm = ({ onBack, onContinue }: Props) => {
 
                 <div>
                     <label htmlFor="zipCode">CEP</label>
-                    <input type="text" id="zipCode" name="zipCode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
+                    <IMaskInput
+                        mask="0000-000"
+                        id="zipCode" 
+                        name="zipCode" 
+                        value={zipCode} 
+                        onAccept={(value) => setZipCode(value)}
+                        />
                 </div>
                 <div>
                     <label htmlFor="number">Número</label>

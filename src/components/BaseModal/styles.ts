@@ -45,6 +45,15 @@ export const ConteudoModal = styled.div`
 
     }
 
+    p {
+        color: ${cores.rosa2};
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        line-height: 22px;
+
+    }
+
     label {
         color: ${cores.rosa2};
         font-size: 14px;

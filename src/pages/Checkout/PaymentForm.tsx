@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IMaskInput } from 'react-imask'
 import * as S from '../../components/BaseModal/styles'
 
 
@@ -9,6 +10,7 @@ type Props = {
 }
 
 const PaymentForm = ({ onBack, onFinish }: Props) => {
+
 
 
     const [nameCard, setNameCard] = useState('')
@@ -53,13 +55,17 @@ const PaymentForm = ({ onBack, onFinish }: Props) => {
             return
         }
 
-        const currentYear = new Date().getFullYear()
+        const currentDate = new Date()
+        const currentYear = currentDate.getFullYear()
+        const currentMonth = currentDate.getMonth() + 1
+
         const year = Number(expirationYear)
 
-        if (year < currentYear) {
-            alert('O ano de vencimento do cartão é inválido!')
-            return
-        }
+        if (year < currentYear || (year === currentYear && month < currentMonth)
+            ) {
+                alert('O cartão está vencido!')
+                return
+            }
 
         onFinish()
     }
@@ -72,7 +78,7 @@ const PaymentForm = ({ onBack, onFinish }: Props) => {
 
             <div>
                 <label htmlFor='nameCard'>Nome no cartão </label>
-                <input type="text" id='nameCard' name='nameCard' value={nameCard} onChange={(e) => setNameCard(e.target.value)}/>
+                <input type="text" id='nameCard' name='nameCard' autoComplete='cc-name' value={nameCard} onChange={(e) => setNameCard(e.target.value)}/>
             </div>
 
 
@@ -80,31 +86,26 @@ const PaymentForm = ({ onBack, onFinish }: Props) => {
 
             <div>
                 <label htmlFor='cardNumber' >Número do cartão </label>
-                <input
-                    type="text"
+                <IMaskInput
+                    mask="0000 0000 0000 0000"
                     id='cardNumber'
                     name='cardNumber'
-                    inputMode='numeric'
-                    maxLength={16}
                     value={cardNumber}
-                    onChange={(e) =>  {
-                        const value = e.target.value.replace(/\D/g, '')
-                        setCardNumber(value)
-                    }}/>
+                    autoComplete='cc-number'
+                    onAccept={(value) => setCardNumber(value)}
+                    />
             </div>
             <div>
                 <label htmlFor='cvv'> CVV </label>
-                <input
-                    type="text"
+                <IMaskInput
+                    mask="000"
                     id='cvv' 
-                    name='cvv' 
+                    name='cvv'
                     inputMode='numeric'
-                    maxLength={3}
-                    value={cvv} 
-                    onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, '')
-                        setCvv(value)
-                    }}/>
+                    value={cvv}
+                    autoComplete='cc-csc'
+                    onAccept={(value) => setCvv(value)}
+                    />
             </div>
 
             </div>
@@ -113,31 +114,27 @@ const PaymentForm = ({ onBack, onFinish }: Props) => {
 
             <div >
                 <label htmlFor='expirationMonth'> Mês de vencimento </label>
-                <input
-                    type="text"
+                <IMaskInput
+                    mask="00"
                     id='expirationMonth'
                     name='expirationMonth'
                     inputMode='numeric'
-                    maxLength={2}
-                    value={expirationMonth} 
-                    onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, '')
-                        setExpirationMonth(value)
-                    }}/>
+                    value={expirationMonth}
+                    autoComplete='cc-exp-month'
+                    onAccept={(value) => setExpirationMonth(value)}
+                    />
             </div>
             <div>
                 <label htmlFor='expirationYear'> Ano de vencimento </label>
-                <input
-                    type="text"
+                <IMaskInput
+                    mask="0000"
                     id='expirationYear'
                     name='expirationYear'
                     value={expirationYear} 
                     inputMode='numeric'
-                    maxLength={4}
-                    onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, '')
-                        setExpirationYear(value)
-                    }}/>
+                    autoComplete='cc-exp-year'
+                    onAccept={(value) => setExpirationYear(value)}
+                    />
             </div>
 
             </div>
