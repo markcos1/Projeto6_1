@@ -12,7 +12,7 @@ const BaseModal = ({  children, title, isOpen, onClose }: Props) => {
 
 
     return (
-        <Overlay $isOpen={true} onClick={onClose}>
+        <Overlay $isOpen={isOpen} onClick={onClose}>
             <ContainerModal onClick={(e) => e.stopPropagation()}>
                 <h2>{title}</h2>
                 {children}

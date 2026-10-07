@@ -1,3 +1,4 @@
+import { useLocation, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../Button";
 
@@ -17,6 +18,9 @@ export const formatPrice = (amount = 0) => {
 
 
 const Cart =  () => {
+
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
 
@@ -54,7 +58,20 @@ const Cart =  () => {
                 <Prices>
                     Valor total <span>{formatPrice(getTotalPrice())}</span>
                 </Prices>
-                <Button type="button" title="Clique aqui para finalizar a compra">Continuar com a entrega</Button>
+                <Button type="button" title="Clique aqui para finalizar a compra"
+                        onClick={() => {
+                            if (items.length === 0) {
+                                alert('Seu carrinho está  vazio!')
+                                return
+                            }
+                            navigate('/checkout', {
+                                state: {
+                                    backgroundLocation: location
+                                }
+                            })
+                        }}
+                        
+                        >Continuar com a entrega</Button>
             </Sidebar>
         </CartContainer>
     )

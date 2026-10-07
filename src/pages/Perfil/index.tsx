@@ -34,6 +34,7 @@ const Perfil = () => {
     const [selectedProduct, setSelectedProduct ] = useState<Product | null>(null);
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
+    const [ checkoutOpen, setCheckoutOpen ] = useState(false)
 
 
     useEffect(() => {

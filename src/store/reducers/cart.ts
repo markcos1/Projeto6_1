@@ -1,5 +1,7 @@
+import { useLocation, useNavigate } from 'react-router-dom'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Product } from '../../pages/Perfil'
+
 
 type CartState = {
     items: Product[] 
@@ -10,6 +12,8 @@ const initialState: CartState = {
     items: [],
     isOpen: false 
     }
+
+    
 
     const cartSlice = createSlice({
     name: 'cart',
@@ -29,6 +33,9 @@ const initialState: CartState = {
     remove: (state, action: PayloadAction<number>) => {
         state.items = state.items.filter((item) => item.id !== action.payload)
     },
+    clear: state => {
+        state.items = []
+    },
     open: (state) => {
         state.isOpen = true
     },
@@ -38,5 +45,5 @@ const initialState: CartState = {
     }
 })
 
-export const { add, remove, open, close } = cartSlice.actions
+export const { add, remove, clear, open, close } = cartSlice.actions
 export default cartSlice.reducer
