@@ -1,4 +1,3 @@
-import { useLocation, useNavigate } from 'react-router-dom'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Product } from '../../pages/Perfil'
 

@@ -4,10 +4,21 @@ import { IMaskInput } from 'react-imask'
 import * as S from "../../components/BaseModal/styles"
 
 
+type DeliveryData = {
+    receiver: string
+    address: {
+        description: string
+        city: string
+        zipCode: string
+        number: number
+        complement: string
+    }
+}
+
 type Props = {
 
     onBack: () => void;
-    onContinue: () => void
+    onContinue: (data: DeliveryData) => void
 }
 
 const DeliveryForm = ({ onBack, onContinue }: Props) => {
@@ -34,9 +45,19 @@ const DeliveryForm = ({ onBack, onContinue }: Props) => {
         return
     }
 
+    const deliveryData: DeliveryData = {
+        receiver: fullName,
+        address: {
+            description: address,
+            city,
+            zipCode,
+            number: Number(number),
+            complement
+        }
+    }
 
+    onContinue(deliveryData)
 
-    onContinue()
     }
 
     return (
@@ -46,14 +67,17 @@ const DeliveryForm = ({ onBack, onContinue }: Props) => {
                 <form onSubmit={handleSubmit}>
                     
                 <h2>Entrega</h2>
+
                 <div>
                     <label htmlFor="fullName">Quem irá receber</label>
                     <input type="text" id="fullName" name="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                 </div>
+
                 <div>
                     <label htmlFor="address">Endereço</label>
                     <input type="text" id="address" name="address"  value={address} onChange={(e) => setAddress(e.target.value)} />
                 </div>
+
                 <div>
                     <label htmlFor="city">Cidade</label>
                     <input type="text" id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} />

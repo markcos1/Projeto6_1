@@ -1,17 +1,27 @@
 import { useState } from 'react'
 import { IMaskInput } from 'react-imask'
+
 import * as S from '../../components/BaseModal/styles'
 
+type PaymentData = {
+    card: {
+        name: string
+        number: string
+        code: number
+        expires: {
+            month: number
+            year: number
+        }
+    }
+}
 
 type Props = {
     onBack: () => void
-    onFinish: () => void
-    
+    onFinish: (data: PaymentData) => void
+    isSubmitting?: boolean
 }
 
-const PaymentForm = ({ onBack, onFinish }: Props) => {
-
-
+const PaymentForm = ({ onBack, onFinish, isSubmitting = false }: Props) => {
 
     const [nameCard, setNameCard] = useState('')
     const [cardNumber, setCardNumber] = useState('')
@@ -19,11 +29,10 @@ const PaymentForm = ({ onBack, onFinish }: Props) => {
     const [expirationMonth, setExpirationMonth] = useState('')
     const [expirationYear, setExpirationYear] = useState('')
 
-
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if(
+        if (
             !nameCard.trim() ||
             !cardNumber.trim() ||
             !cvv.trim() ||
@@ -61,89 +70,143 @@ const PaymentForm = ({ onBack, onFinish }: Props) => {
 
         const year = Number(expirationYear)
 
-        if (year < currentYear || (year === currentYear && month < currentMonth)
-            ) {
-                alert('O cartão está vencido!')
-                return
+        if (
+            year < currentYear ||
+            (year === currentYear && month < currentMonth)
+        ) {
+            alert('O cartão está vencido!')
+            return
+        }
+
+        const paymentData: PaymentData = {
+            card: {
+                name: nameCard,
+                number: cleanCardNumber,
+                code: Number(cleanCvv),
+                expires: {
+                    month,
+                    year
+                }
             }
+        }
 
-        onFinish()
+        onFinish(paymentData)
     }
-
 
     return (
         <S.ConteudoModal>
-            <h2>Pagamento</h2>
-            <p>Escolha a forma de pagamento:</p>
-
-            <div>
-                <label htmlFor='nameCard'>Nome no cartão </label>
-                <input type="text" id='nameCard' name='nameCard' autoComplete='cc-name' value={nameCard} onChange={(e) => setNameCard(e.target.value)}/>
-            </div>
-
-
-            <div className='linhaPagamento'>
-
-            <div>
-                <label htmlFor='cardNumber' >Número do cartão </label>
-                <IMaskInput
-                    mask="0000 0000 0000 0000"
-                    id='cardNumber'
-                    name='cardNumber'
-                    value={cardNumber}
-                    autoComplete='cc-number'
-                    onAccept={(value) => setCardNumber(value)}
-                    />
-            </div>
-            <div>
-                <label htmlFor='cvv'> CVV </label>
-                <IMaskInput
-                    mask="000"
-                    id='cvv' 
-                    name='cvv'
-                    inputMode='numeric'
-                    value={cvv}
-                    autoComplete='cc-csc'
-                    onAccept={(value) => setCvv(value)}
-                    />
-            </div>
-
-            </div>
-
-            <div className='linhaPagamento'>
-
-            <div >
-                <label htmlFor='expirationMonth'> Mês de vencimento </label>
-                <IMaskInput
-                    mask="00"
-                    id='expirationMonth'
-                    name='expirationMonth'
-                    inputMode='numeric'
-                    value={expirationMonth}
-                    autoComplete='cc-exp-month'
-                    onAccept={(value) => setExpirationMonth(value)}
-                    />
-            </div>
-            <div>
-                <label htmlFor='expirationYear'> Ano de vencimento </label>
-                <IMaskInput
-                    mask="0000"
-                    id='expirationYear'
-                    name='expirationYear'
-                    value={expirationYear} 
-                    inputMode='numeric'
-                    autoComplete='cc-exp-year'
-                    onAccept={(value) => setExpirationYear(value)}
-                    />
-            </div>
-
-            </div>
 
             <form onSubmit={handleSubmit}>
-                <button type='submit'>Finalizar pagamento</button>
-                <button type='button' onClick={onBack}>Voltar para a edição de endereço</button>
-            </form>
 
+                <h2>Pagamento</h2>
+
+                <p>Escolha a forma de pagamento:</p>
+
+                <div>
+                    <label htmlFor="nameCard">
+                        Nome no cartão
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nameCard"
+                        name="nameCard"
+                        autoComplete="cc-name"
+                        value={nameCard}
+                        onChange={(e) => setNameCard(e.target.value)}
+                    />
+                </div>
+
+                <div className="linhaPagamento">
+
+                    <div>
+                        <label htmlFor="cardNumber">
+                            Número do cartão
+                        </label>
+
+                        <IMaskInput
+                            mask="0000 0000 0000 0000"
+                            id="cardNumber"
+                            name="cardNumber"
+                            inputMode="numeric"
+                            autoComplete="cc-number"
+                            value={cardNumber}
+                            onAccept={(value) => setCardNumber(value)}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="cvv">
+                            CVV
+                        </label>
+
+                        <IMaskInput
+                            mask="000"
+                            id="cvv"
+                            name="cvv"
+                            inputMode="numeric"
+                            autoComplete="cc-csc"
+                            value={cvv}
+                            onAccept={(value) => setCvv(value)}
+                        />
+                    </div>
+
+                </div>
+
+                <div className="linhaPagamento">
+
+                    <div>
+                        <label htmlFor="expirationMonth">
+                            Mês de vencimento
+                        </label>
+
+                        <IMaskInput
+                            mask="00"
+                            id="expirationMonth"
+                            name="expirationMonth"
+                            inputMode="numeric"
+                            autoComplete="cc-exp-month"
+                            value={expirationMonth}
+                            onAccept={(value) => setExpirationMonth(value)}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="expirationYear">
+                            Ano de vencimento
+                        </label>
+
+                        <IMaskInput
+                            mask="0000"
+                            id="expirationYear"
+                            name="expirationYear"
+                            inputMode="numeric"
+                            autoComplete="cc-exp-year"
+                            value={expirationYear}
+                            onAccept={(value) => setExpirationYear(value)}
+                        />
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting
+                        ? 'Enviando pedido...'
+                        : 'Finalizar pagamento'}
+                </button>
+
+                <button
+                    type="button"
+                    onClick={onBack}
+                    disabled={isSubmitting}
+                >
+                    Voltar para a edição de endereço
+                </button>
+
+            </form>
 
         </S.ConteudoModal>
     )
